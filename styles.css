@@ -1,0 +1,276 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  background: #f7f6f2;
+  color: #222;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.smoke-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+.smoke-bg::before, .smoke-bg::after {
+  content: '';
+  position: absolute;
+  width: 200vw;
+  height: 200vw;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(200,200,200,0.15) 0%, rgba(255,255,255,0.05) 80%, transparent 100%);
+  animation: smokeMove 18s linear infinite;
+  border-radius: 50%;
+}
+.smoke-bg::after {
+  animation-delay: 8s;
+  opacity: 0.7;
+}
+@keyframes smokeMove {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-48%, -52%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.trailer-section {
+  position: relative;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #e0f7fa 0%, #fffde4 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+.trailer-section video {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.sound-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffb300;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+}
+.sound-btn:hover {
+  background: #ff7043;
+  transform: scale(1.07);
+}
+
+.characters-section {
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  background: linear-gradient(180deg, #fffde4 0%, #e1bee7 100%);
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+.characters-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #7c43bd;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.character-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.character-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(124,67,189,0.08);
+  width: 120px;
+  padding: 1rem 0.5rem 0.7rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2px solid #e1bee7;
+}
+.character-card:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 6px 24px rgba(124,67,189,0.18);
+  border-color: #7c43bd;
+}
+.character-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 2px solid #ffb300;
+  background: #fffde4;
+}
+.character-card span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #7c43bd;
+}
+
+.character-popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(60, 30, 90, 0.25);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.character-popup.active {
+  display: flex;
+}
+.popup-content {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(124,67,189,0.18);
+  text-align: center;
+  max-width: 320px;
+  position: relative;
+  animation: popupIn 0.25s;
+}
+@keyframes popupIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.close-popup {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.1rem;
+  font-size: 2rem;
+  color: #7c43bd;
+  cursor: pointer;
+  font-weight: bold;
+}
+.popup-content img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+  border: 2px solid #ffb300;
+}
+.popup-content h3 {
+  color: #ff7043;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.popup-content p {
+  color: #444;
+  font-size: 1rem;
+}
+
+.avatar-section, .quiz-section, .minigame-section, .voicegen-section {
+  padding: 2.2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.avatar-section {
+  background: linear-gradient(90deg, #fffde4 0%, #b2dfdb 100%);
+}
+.quiz-section {
+  background: linear-gradient(90deg, #e1bee7 0%, #fffde4 100%);
+}
+.minigame-section {
+  background: linear-gradient(90deg, #fffde4 0%, #ffe082 100%);
+}
+.voicegen-section {
+  background: linear-gradient(90deg, #fffde4 0%, #e0f7fa 100%);
+}
+
+.big-btn {
+  display: inline-block;
+  margin: 1.2rem 0 0.7rem 0;
+  padding: 1.1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #7c43bd 0%, #ffb300 100%);
+  border: none;
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 16px rgba(124,67,189,0.12);
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.big-btn:hover {
+  background: linear-gradient(90deg, #ff7043 0%, #7c43bd 100%);
+  transform: scale(1.06);
+}
+
+.external-placeholder {
+  margin: 1.2rem auto 0 auto;
+  padding: 1.1rem;
+  background: #f3e5f5;
+  border-radius: 1.2rem;
+  color: #7c43bd;
+  font-size: 1.1rem;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(124,67,189,0.08);
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #7c43bd;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 700px) {
+  .character-cards {
+    gap: 2rem;
+  }
+  .character-card {
+    width: 160px;
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .popup-content {
+    max-width: 400px;
+  }
+  .trailer-section video {
+    height: 70vh;
+  }
+}
+@media (min-width: 1000px) {
+  .trailer-section {
+    min-height: 70vh;
+  }
+  .trailer-section video {
+    height: 70vh;
+    border-radius: 0 0 3rem 3rem;
+  }
+  .characters-section, .avatar-section, .quiz-section, .minigame-section, .voicegen-section {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+} 
