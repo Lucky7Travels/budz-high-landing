@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budz High - Animated Series Trailer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Smoke Animation Background -->
+  <div class="smoke-bg"></div>
+
+  <!-- Trailer Section -->
+  <section class="trailer-section">
+    <video id="trailerVideo" src="trailer-placeholder.mp4" autoplay muted loop playsinline poster="trailer-poster.jpg"></video>
+    <button id="soundBtn" class="sound-btn">🔊 Watch with Sound</button>
+  </section>
+
+  <!-- Meet the Characters -->
+  <section class="characters-section">
+    <h2>Meet the Characters</h2>
+    <div class="character-cards">
+      <div class="character-card" data-char="1">
+        <img src="char1.png" alt="Character 1" />
+        <span>Lucky</span>
+      </div>
+      <div class="character-card" data-char="2">
+        <img src="char2.png" alt="Character 2" />
+        <span>Pharaoh</span>
+      </div>
+      <div class="character-card" data-char="3">
+        <img src="char3.png" alt="Character 3" />
+        <span>Flight</span>
+      </div>
+      <div class="character-card" data-char="4">
+        <img src="char4.png" alt="Character 4" />
+        <span>Annu</span>
+      </div>
+    </div>
+    <!-- Popups -->
+    <div class="character-popup" id="charPopup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <img id="popupImg" src="" alt="Character" />
+        <h3 id="popupName"></h3>
+        <p id="popupBio"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avatar Builder Button -->
+  <section class="avatar-section">
+    <a href="#" class="big-btn" id="avatarBuilderBtn">Create Your Own Budz High Character</a>
+    <div class="external-placeholder">[Avatar Builder (Cartoonify) Embed Placeholder]</div>
+  </section>
+
+  <!-- Personality Quiz -->
+  <section class="quiz-section">
+    <h2>Which Budz High Character Are You?</h2>
+    <a href="#" class="big-btn" id="quizBtn">Start Quiz</a>
+    <div class="external-placeholder">[Personality Quiz Tool Placeholder]</div>
+  </section>
+
+  <!-- Mini-Game Section -->
+  <section class="minigame-section">
+    <h2>Roll With Lucky</h2>
+    <a href="#" class="big-btn" id="minigameBtn">Play Now</a>
+    <div class="external-placeholder">[Mini-Game Placeholder]</div>
+  </section>
+
+  <!-- Voice Generator Placeholder -->
+  <section class="voicegen-section">
+    <h2>Try the Budz High Voice Generator</h2>
+    <div class="external-placeholder">[ElevenLabs Voice Generator Embed Placeholder]</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html> 
