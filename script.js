@@ -1,22 +1,22 @@
 // Character bios and images (placeholder data)
 const characterData = [
   {
-    name: 'Chill Bud',
+    name: 'Lucky',
     bio: 'The laid-back leader who always keeps it cool. Loves reggae and good vibes.',
     img: 'char1.png',
   },
   {
-    name: 'Lucky',
+    name: 'Pharaoh',
     bio: 'The mischievous prankster with a heart of gold. Always rolling into trouble!',
     img: 'char2.png',
   },
   {
-    name: 'Sparky',
+    name: 'Flight',
     bio: 'The energetic spark of the group, full of wild ideas and contagious laughter.',
     img: 'char3.png',
   },
   {
-    name: 'Blaze',
+    name: 'Annu',
     bio: 'The creative dreamer, always drawing, painting, and imagining new worlds.',
     img: 'char4.png',
   },
